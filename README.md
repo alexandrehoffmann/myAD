@@ -69,4 +69,33 @@ for (size_t i=0;i<x.size();++i)
 ```
 # Reverse-on-forward mode
 
-Reverse on forward aims at computing $\nabla^2 f(x)d$ for a given direction $d$
+Reverse on forward aims at computing $\nabla^2 f(x)d$ for a given direction $d$.
+First, we compute $g(x) = \nabla f(x)^T d$ with forward mode automatic differentiation.
+Second, we use reverse mode automatic differentiation to compute $\nabla g(x) = \nabla^2 f(x)d$.
+
+This is done via a spetialization of the forward variable :
+```
+using adouble = myAD::fwd::Var< myAD::rev::Var<double> >;
+	
+myAD::rev::VarGraph<double>::getInstance().clear();
+	
+adouble eps(0,1);
+	
+std::vector< adouble > x(10, 1.0);
+for (size_t i=0;i<x.size();++i)
+{
+	x[i] = 1;
+}
+x[2] += eps; // computing \nabla f(x)^T e_3
+	
+adouble y = Rosenbrock(x.data(), x.size());
+myAD::rev::Var<double> gradDotEps = y.getDiff();
+std::vector< double > Hd = myAD::rev::VarGraph<double>::getInstance().gradient(gradDotEps);
+	
+for (size_t i=0;i<x.size();++i)
+{
+	std::cout << Hd[x[i].getValue().getId()] << std::endl;
+}
+	
+myAD::rev::VarGraph<double>::getInstance().clear();
+```
