@@ -67,3 +67,6 @@ for (size_t i=0;i<x.size();++i)
 	std::cout << "∂z/∂x[" << i << "](x) = " << grad[i] << std::endl;
 }
 ```
+# Reverse-on-forward mode
+
+Reverse on forward aims at computing $\nabla^2 f(x)d$ for a given direction $d$
