@@ -84,15 +84,21 @@ std::vector< T > VarGraph<T>::gradient(const Var<T>& var, const T seed)
 template<typename T>
 std::vector< T > VarGraph<T>::gradient(const Var<T>& var, const Var<T>* x, const size_t x_size, const T seed)
 {
-	std::vector<T> fullGrad = gradient(var, seed);
 	std::vector<T> grad(x_size);
+	gradient(var, x, x_size, grad.data(), seed);
+
+	return grad;
+}
+
+template<typename T>
+void VarGraph<T>::gradient(const Var<T>& var, const Var<T>* x, const size_t x_size, const T seed, T* __restrict__ grad)
+{
+	std::vector<T> fullGrad = gradient(var, seed);
 	
 	for (size_t i=0;i<x_size;++i)
 	{
 		grad[i] = fullGrad[x[i].getId()];
 	}
-
-	return grad;
 }
 
 template<typename T>

@@ -24,6 +24,7 @@
 #ifndef REV_ON_FWD_VAR_HPP
 #define REV_ON_FWD_VAR_HPP
 
+#include <Forward/Var.hpp>
 #include <Reverse/Var.hpp>
 
 namespace myAD

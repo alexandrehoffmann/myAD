@@ -73,6 +73,8 @@ public:
 	std::vector< T > gradient(const Var<T>& var, const T seed = 1);
 	std::vector< T > gradient(const Var<T>& var, const Var<T>* x, const size_t x_size, const T seed = 1);
 	
+	void gradient(const Var<T>& var, const Var<T>* x, const size_t x_size, const T seed, T* __restrict__ g);
+	
 	size_t getNnodes() const { return m_adjList.size(); }
 	size_t getNedges() const;
 	

@@ -9,16 +9,16 @@ set(CMAKE_VERBOSE_MAKEFILE 0)
 ########################################################################
 
 set(HEADERS
-	include/Forward/Var.hpp
-	include/Forward/Var.tpp
+	include/myAD/Forward/Var.hpp
+	include/myAD/Forward/Var.tpp
 	#
-	include/Reverse/Var.hpp
-	include/Reverse/VarGraph.hpp
-	include/Reverse/Var.tpp
-	include/Reverse/VarGraph.tpp
+	include/myAD/Reverse/Var.hpp
+	include/myAD/Reverse/VarGraph.hpp
+	include/myAD/Reverse/Var.tpp
+	include/myAD/Reverse/VarGraph.tpp
 	#
-	include/ReverseOnForward/Var.hpp
-	include/ReverseOnForward/Var.tpp
+	include/myAD/ReverseOnForward/Var.hpp
+	include/myAD/ReverseOnForward/Var.tpp
 )
 
 # Declare the library target.
