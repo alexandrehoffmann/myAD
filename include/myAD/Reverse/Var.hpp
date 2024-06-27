@@ -107,6 +107,6 @@ template<typename T> myAD::rev::Var<T> operator-(const myAD::rev::Var<T>& lhs, c
 template<typename T> myAD::rev::Var<T> operator*(const myAD::rev::Var<T>& lhs, const T& rhs);
 template<typename T> myAD::rev::Var<T> operator/(const myAD::rev::Var<T>& lhs, const T& rhs);
 
-#include <Reverse/Var.tpp>
+#include <myAD/Reverse/Var.tpp>
 
 #endif // REV_VAR_HPP

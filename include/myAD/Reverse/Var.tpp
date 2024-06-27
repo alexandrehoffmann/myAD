@@ -24,8 +24,8 @@
 #ifndef REV_VAR_TPP
 #define REV_VAR_TPP
 
-#include <Reverse/Var.hpp>
-#include <Reverse/VarGraph.hpp>
+#include <myAD/Reverse/Var.hpp>
+#include <myAD/Reverse/VarGraph.hpp>
 
 #include <cmath>
 

@@ -24,8 +24,8 @@
 #ifndef REV_VAR_GRAPH_TPP
 #define REV_VAR_GRAPH_TPP
 
-#include <Reverse/VarGraph.hpp>
-#include <Reverse/Var.hpp>
+#include <myAD/Reverse/VarGraph.hpp>
+#include <myAD/Reverse/Var.hpp>
 
 namespace myAD
 {

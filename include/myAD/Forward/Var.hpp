@@ -103,8 +103,8 @@ template<typename T> myAD::fwd::Var<T> operator-(const myAD::fwd::Var<T>& lhs, c
 template<typename T> myAD::fwd::Var<T> operator*(const myAD::fwd::Var<T>& lhs, const T& rhs) { myAD::fwd::Var<T> ret(lhs); return ret *= rhs; }
 template<typename T> myAD::fwd::Var<T> operator/(const myAD::fwd::Var<T>& lhs, const T& rhs) { myAD::fwd::Var<T> ret(lhs); return ret /= rhs; }
 
-#include <Forward/Var.tpp>
+#include <myAD/Forward/Var.tpp>
 
-#include <ReverseOnForward/Var.hpp>
+#include <myAD/ReverseOnForward/Var.hpp>
 
 #endif // FWD_VAR_HPP

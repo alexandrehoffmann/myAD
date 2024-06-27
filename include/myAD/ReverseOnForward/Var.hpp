@@ -24,8 +24,8 @@
 #ifndef REV_ON_FWD_VAR_HPP
 #define REV_ON_FWD_VAR_HPP
 
-#include <Forward/Var.hpp>
-#include <Reverse/Var.hpp>
+#include <myAD/Forward/Var.hpp>
+#include <myAD/Reverse/Var.hpp>
 
 namespace myAD
 {
@@ -111,6 +111,6 @@ template<typename T> myAD::fwd::Var< myAD::rev::Var<T> > operator-(const myAD::f
 template<typename T> myAD::fwd::Var< myAD::rev::Var<T> > operator*(const myAD::fwd::Var< myAD::rev::Var<T> >& lhs, const T& rhs) { myAD::fwd::Var< myAD::rev::Var<T> > ret(lhs); return ret *= rhs; }
 template<typename T> myAD::fwd::Var< myAD::rev::Var<T> > operator/(const myAD::fwd::Var< myAD::rev::Var<T> >& lhs, const T& rhs) { myAD::fwd::Var< myAD::rev::Var<T> > ret(lhs); return ret /= rhs; }
 
-#include <ReverseOnForward/Var.tpp>
+#include <myAD/ReverseOnForward/Var.tpp>
 
 #endif // REV_ON_FWD_VAR_HPP
